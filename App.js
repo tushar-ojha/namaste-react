@@ -1,3 +1,6 @@
+import React from "react";
+// import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 // Create h1 tag in React.
         // This createElement() takes 3 arguments. 1st one is the tag, 2nd an empty object and 3rd one is what we have to put in the tag.
 
