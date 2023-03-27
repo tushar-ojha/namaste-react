@@ -40,3 +40,10 @@ import ReactDOM from "react-dom/client";
 
 
 // Code for Episode 3
+// jsx!
+
+const jsxHeading = ( <h1 id="heading" className ="heading">
+        Namaste React using JSX</h1>);
+console.log(jsxHeading);
+root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(jsxHeading);
