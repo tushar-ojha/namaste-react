@@ -35,20 +35,28 @@ const Header = () => {
     )
 }
 
+
 const RestaurantCard = () => {
     return (
         <div className="res-card">
+             <div className="res-logo">
+                <img src="https://thumbs.dreamstime.com/z/healthy-asian-food-stir-fry-vegetables-sesame-close-up-bowl-vertical-top-view-table-above-142520094.jpg"/>
+            </div>
             <h3>Ojha Foods</h3>
+            <h4>Cuisine: Russian</h4>
+            <h4>Star Rating: 4</h4>
+            <h4>Delivery time: 38 minutes</h4>
         </div>
     )
 }
-
+ 
 const Body = () => {
     return (
         <div className= "body">
             <div className="search">Search</div>
             <div className="res-container">
                 <RestaurantCard/>
+                <RestaurantCard/><RestaurantCard/><RestaurantCard/>
             </div>
         </div>
     )
