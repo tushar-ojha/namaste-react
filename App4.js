@@ -36,14 +36,15 @@ const Header = () => {
 }
 
 
-const RestaurantCard = () => {
+const RestaurantCard = ({resName, cuisine}) => {
+
     return (
         <div className="res-card">
              <div className="res-logo">
                 <img src="https://thumbs.dreamstime.com/z/healthy-asian-food-stir-fry-vegetables-sesame-close-up-bowl-vertical-top-view-table-above-142520094.jpg"/>
             </div>
-            <h3>Ojha Foods</h3>
-            <h4>Cuisine: Russian</h4>
+            <h3>{resName}</h3>
+            <h4>{cuisine}</h4>
             <h4>Star Rating: 4</h4>
             <h4>Delivery time: 38 minutes</h4>
         </div>
@@ -55,8 +56,11 @@ const Body = () => {
         <div className= "body">
             <div className="search">Search</div>
             <div className="res-container">
-                <RestaurantCard/>
-                <RestaurantCard/><RestaurantCard/><RestaurantCard/>
+                {/* Passing props to the components */}
+                <RestaurantCard resName="Meghana Foods" cuisine="Biryani, North Indian, Asian"/>
+                <RestaurantCard resName="KFC" cuisine="Russian"/>
+                <RestaurantCard resName="Burger King" cuisine="Italian"/>
+                <RestaurantCard resName="Meghana Foods" cuisine="Mexican"/>
             </div>
         </div>
     )
