@@ -36,36 +36,60 @@ const Header = () => {
 }
 
 
-const RestaurantCard = ({resName, cuisine}) => {
 
+const RestaurantCard = (props) => {
+   const {resData} = props;
+   const {name, cuisine, avgRating, deliveryTime,costOfTwo} = resData?.data; 
+//    Above thing is optional chaining!
     return (
         <div className="res-card">
              <div className="res-logo">
                 <img src="https://thumbs.dreamstime.com/z/healthy-asian-food-stir-fry-vegetables-sesame-close-up-bowl-vertical-top-view-table-above-142520094.jpg"/>
             </div>
-            <h3>{resName}</h3>
-            <h4>{cuisine}</h4>
-            <h4>Star Rating: 4</h4>
-            <h4>Delivery time: 38 minutes</h4>
+            <h3>{name}</h3>
+            <h4>{cuisine.join(", ")}</h4>
+            <h4>{avgRating} stars</h4>
+            <h4>{deliveryTime} minutes</h4>
+            <h4>Rs{costOfTwo/100} minutes</h4>
         </div>
     )
 }
+
+const resList = [
+    {data : {
+        key: 1,
+        name: "Ojha Foods",
+        cuisine: ["Burger, Pizza, Russian, French"],
+        avgRating: "5",
+        deliveryTime: 10,
+        costOfTwo: 40000
+    }},
+
+    {data : {
+        key: 2,
+        name: "Ojha Sweets",
+        cuisine: ["Indian"],
+        avgRating: "5",
+        deliveryTime: 5,
+        costOfTwo: 20000
+    }},
+    
+]; //Let this is coming from some API.
+
  
 const Body = () => {
     return (
         <div className= "body">
             <div className="search">Search</div>
             <div className="res-container">
-                {/* Passing props to the components */}
-                <RestaurantCard resName="Meghana Foods" cuisine="Biryani, North Indian, Asian"/>
-                <RestaurantCard resName="KFC" cuisine="Russian"/>
-                <RestaurantCard resName="Burger King" cuisine="Italian"/>
-                <RestaurantCard resName="Meghana Foods" cuisine="Mexican"/>
+                {
+                    resList.map((restaurant, index) => (<RestaurantCard key = {index} 
+                    resData = {restaurant} />))
+                }    
             </div>
         </div>
     )
 }
-
 
 
 const AppLayout = () => {
